@@ -1,0 +1,51 @@
+
+
+```{r}
+A <- matrix(c(10, 8,5, 12), ncol = 2, byrow = TRUE)
+A
+```
+
+```{r}
+B <- matrix(c(5, 3,15, 6), ncol = 2, byrow = TRUE)
+B
+```
+
+Multiplication by a scalar:
+```{r}
+2*A
+```
+Element-wise multiplication:
+```{r}
+A*B
+```
+matricial multiplication with  %*% operator:
+```{r}
+A %*% B
+```
+Transpose of a matrix:
+```{r}
+t(A)
+```
+Matrix crossproduct:
+```{r}
+t(A) %*% B
+```
+
+```{r}
+A %*% t(B)
+```
+Inverse of a matrix in R:
+```{r}
+M <- solve(A)
+M
+```
+Eigenvalues in R:
+```{r}
+eigen(A)$values
+eigen(B)$values 
+```
+Eigenvectors in R:
+```{r}
+eigen(A)$vectors
+eigen(B)$vectors
+```

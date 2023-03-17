@@ -1,0 +1,70 @@
+
+Matrix Operations in R :
+```{r}
+matrix1 <- matrix(c(11, 24, 37, 48, 59, 66), nrow = 3, ncol = 2, byrow = TRUE)
+
+print(matrix1)
+```
+
+```{r}
+matrix1 <- matrix(c(11, 24, 37, 48, 59, 66), nrow = 3, ncol = 2)
+
+print(matrix1)
+```
+Accessing elements in matrix :
+```{r}
+matrix1 <- matrix(c(23,56,89,852,6459,2235,526,532,53,232,865,32), nrow=4,ncol=3)
+
+print(matrix1)
+
+cat("\nDesired Element:", matrix1[1, 2])
+
+cat("\nDiagonal elements in the matrix :",diag(x=matrix1))
+
+cat("\n2 nd column :",matrix1[,2])
+
+```
+```{r}
+matrix1 <- matrix(c(12,23,45,56,78,89,32,21,65), nrow = 3, ncol = 3)
+
+print(matrix1)
+
+cat("\n1st Row:", matrix1[1, ])
+
+cat("\n2nd Column:", matrix1[, 2])
+```
+MOdifing elements in matrix:
+```{r}
+matrix1 <- matrix(c(18, 26, 34, 48, 56, 89), nrow = 2, ncol = 3)
+
+print(matrix1)
+
+matrix1[2,3] = 5695
+
+print(matrix1)
+```
+Combining two matrices :
+```{r}
+mat1 <- matrix(c(10,20,30,40), nrow = 2, ncol = 2)
+mat2 <- matrix(c(50,60,70,80), nrow = 2, ncol = 2)
+
+result1 <- cbind(mat1, mat2)
+print("Matrices combined by columns")
+print(result1)
+
+result2 <- rbind(mat1, mat2)
+print("Matrices combined by rows")
+print(result2)
+```
+Dimension of a matrix :
+```{r}
+mat_dim <- cbind(c(10,20,30),45:50,67:69,c(56,89,45))
+print(mat_dim)
+print("dimension of the following matrix is :")
+dim(mat_dim)
+print("no of rows :")
+nrow(mat_dim)
+print("no of columns :")
+ncol(mat_dim)
+```
+
