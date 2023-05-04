@@ -1,0 +1,104 @@
+MDSC-202(P)-FINAL LAB TEST
+REDG.NO:22229
+
+```{r}
+read_data <- read.csv("5.csv")
+
+print(read_data)
+```
+
+```{r}
+library(ggplot2)
+```
+
+
+Box Plot:
+```{r}
+boxplot(read_data$rfood, read_data$rdur, read_data$rcon, 
+        main = "Box Plot", 
+        xlab = "Variable Names", 
+        ylab = "Variable Values")
+
+ggplot(read_data, aes(x = variable_name, y = variable_value)) + 
+  geom_boxplot() + 
+  labs(title = "Box Plot", 
+       x = "Variable Names", 
+       y = "Variable Values")
+
+```
+
+Histogram:
+```{r}
+hist(read_data$rfood, 
+     main = "Histogram", 
+     xlab = "rfood", 
+     ylab = "Frequency")
+
+ggplot(read_data, aes(x = rfood)) + 
+  geom_histogram(binwidth = 1, fill = "blue", alpha = 0.5) + 
+  labs(title = "Histogram", 
+       x = "rfood", 
+       y = "Frequency")
+
+```
+
+Pie Chart:
+```{r}
+pie(table(read_data$rfood), 
+    main = "Pie Chart")
+
+ggplot(read_data, aes(x = "", fill = rfood)) + 
+  geom_bar(width = 1, alpha = 0.8, stat = "count") + 
+  coord_polar(theta = "y") + 
+  labs(title = "Pie Chart", 
+       fill = "rfood")
+
+```
+
+Bar plot:
+```{r}
+barplot(table(read_data$rfood), 
+        main = "Bar Plot", 
+        xlab = "rfood", 
+        ylab = "Frequency")
+ggplot(read_data, aes(x = rfood)) + 
+  geom_bar(fill = "blue", alpha = 0.8) + 
+  labs(title = "Bar Plot", 
+       x = "rfood", 
+       y = "Frequency")
+
+```
+
+Strip Chart:
+```{r}
+stripchart(read_data$rfood, 
+           method = "jitter", 
+           main = "Strip Chart", 
+           xlab = "rfood", 
+           ylab = "Value")
+
+ggplot(read_data, aes(x = "", y = rfood)) + 
+  geom_point(position = position_jitter(width = 0.2), 
+             alpha = 0.8, 
+             color = "blue") + 
+  labs(title = "Strip Chart", 
+       y = "rfood")
+
+```
+
+Scatter PLot:
+```{r}
+plot(read_data$rfood, read_data$rdur, 
+     main = "Scatter Plot", 
+     xlab = "rfood", 
+     ylab = "rdur")
+
+ggplot(read_data, aes(x = rfood, y = rdur)) + 
+  geom_point(color = "blue", alpha = 0.8) + 
+  labs(title = "Scatter Plot", 
+       x = "rfood", 
+       y = "rdur")
+
+
+```
+
